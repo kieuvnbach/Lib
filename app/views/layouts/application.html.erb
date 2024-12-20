@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html class="h-full antialiased">
-  <%= render "shared/head" %>
+  <head>
+    <%= render "shared/head" %>
+    <%= favicon_link_tag 'library.png' %>
+    <%= stylesheet_link_tag 'styles', media: 'all' %>
+  </head>
 
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white flex flex-col min-h-screen ">
-
     <header>
       <%= render "shared/flash_notice" %>
       <%= render "shared/navbar" %>

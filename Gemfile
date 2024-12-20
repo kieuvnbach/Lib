@@ -6,6 +6,8 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
+
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -77,3 +79,5 @@ gem "sassc-rails"
 
 gem 'pg', '1.3.5'
 gem "dotenv-rails"
+gem 'rails_admin'
+gem "sassc-rails"

@@ -1,0 +1,84 @@
+/* Thêm viền đen dày cho bảng */
+.table-with-black-border {
+    border-collapse: collapse;
+    width: 100%;
+    border: 3px solid black;
+  }
+  
+  .table-with-black-border th,
+  .table-with-black-border td {
+    border: 3px solid black;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  /* Các kiểu CSS khác */
+  .table-with-black-border th {
+    background-color: #f9fafb;
+  }
+  
+  .table-with-black-border tr:nth-child(even) {
+    background-color: #f1f5f9;
+  }
+  
+  .table-with-black-border tr:hover {
+    background-color: #e5e7eb;
+  }
+
+
+/* Màu nền xanh lá cây nhạt cho các hàng chẵn */
+table tr:nth-child(odd) {
+    background-color: #a8d5ba; /* Màu xanh lá cây nhạt */
+  }
+  
+  /* Màu nền xám nhạt cho các hàng lẻ */
+table tr:nth-child(even) {
+    background-color: #f0f0f0; /* Màu xám nhạt */
+}
+  
+table th {
+    background-color: #4a4a4a; /* Màu xám đậm */
+    color: #000000; /* Chữ trắng */
+    font-size: 1.2rem; /* Tăng kích thước chữ */
+    font-weight: bold; /* Làm chữ đậm */
+}
+
+.nav-link.home {
+  background-image: url('/assets/home.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 30px; /* Để có khoảng cách cho hình ảnh */
+}
+
+.nav-link.books {
+  background-image: url('/assets/book.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 30px; /* Để có khoảng cách cho hình ảnh */
+}
+
+.nav-link.categories {
+  background-image: url('/assets/category.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 30px; /* Để có khoảng cách cho hình ảnh */
+}
+
+.nav-link.search {
+  background-image: url('/assets/search.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 30px; /* Để có khoảng cách cho hình ảnh */
+}
+
+.nav-link.plus {
+  background-image: url('/assets/plus.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 25px; /* Để có khoảng cách cho hình ảnh */
+}

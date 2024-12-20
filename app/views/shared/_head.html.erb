@@ -1,11 +1,12 @@
  <head>
   <title>
-    <%= content_for?(:title) ? yield(:title) : "INS2065 PROJECT TEMPLATE" %>
+    <%= content_for?(:title) ? yield(:title) : "Library Management" %>
   </title>
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <link rel="icon" type="image/png" href="app\assets\images\favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag  'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag "application", defer: true %>

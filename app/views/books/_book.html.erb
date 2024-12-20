@@ -1,0 +1,33 @@
+<div id="<%= dom_id book %>">
+  <p>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= book.author %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= book.year %>
+  </p>
+
+  <p>
+    <strong>Available:</strong>
+    <%= book.available ? "Yes" : "No" %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= book.category.name %> <!-- Hiển thị tên của Category thay vì ID -->
+  </p>
+
+  <% if book.image.present? %>
+    <p>
+      <strong>Image:</strong>
+      <img src="<%= book.image %>" alt="<%= book.title %> Image" class="w-32 h-32 object-cover rounded"/>
+    </p>
+  <% end %>
+</div>

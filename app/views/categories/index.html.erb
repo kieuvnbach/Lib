@@ -1,0 +1,45 @@
+<div class="container mx-auto px-4" style="background-image: url('<%= image_path('BG.jpg') %>'); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 100vh; border-radius: 16px;">
+  <div class="flex items-center justify-between flex-wrap mb-6">
+    <h1 class="text-3xl font-bold">Categories</h1>
+
+    <%= link_to new_category_path, class: "nav-link plus #{button_class(theme: 'primary')}" do %>
+      Add New Category
+    <% end %>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="table-auto border-collapse w-full table-with-black-border">
+      <thead class="bg-slate-50 dark:bg-slate-700">
+        <tr>
+          <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Name</th>
+          <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Description</th>
+          <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if @categories.any? %>
+          <% @categories.each do |category| %>
+            <tr id="<%= dom_id(category) %>" class="<%= dom_class(category) %> hover:bg-gray-100">
+              <td class="border border-black p-4 text-slate-500 dark:text-slate-400">
+                <%= link_to category.name, category %>
+              </td>
+              <td class="border border-black p-4 text-slate-500 dark:text-slate-400">
+                <%= category.description %>
+              </td>
+              <td class="border border-black p-4 text-slate-500 dark:text-slate-400">
+                <%= link_to 'Edit', edit_category_path(category), class: button_class(theme: "primary") %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="3" class="border border-black p-4 text-center text-slate-500 dark:text-slate-400">
+              No categories available.
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

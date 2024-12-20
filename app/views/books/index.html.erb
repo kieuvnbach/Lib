@@ -1,0 +1,62 @@
+<div style="text-align: right; margin-bottom: 1.5rem; margin-right: 1.5rem;">
+  <%= form_with(url: books_path, method: "get", local: true, class: "inline-block") do |form| %>
+    <div>
+      <%= form.text_field :search, placeholder: "Search title or category", class: "border p-2 rounded-l-md" %>
+      <%= form.submit 'Search', class: "nav-link search #{button_class(theme: 'primary')}" %>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="container mx-auto px-4" style="background-image: url('<%= image_path('BG.jpg') %>'); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 100vh; border-radius: 16px;">
+  <div class="flex items-center justify-between flex-wrap mb-6" style="margin-top: 1.5rem;">
+    <h1 class="text-3xl font-bold">Books</h1>
+    
+    <%= link_to new_book_path, class: "nav-link plus #{button_class(theme: 'primary')}" do %>
+      Add New Book
+    <% end %>
+  </div>
+
+  <table class="table-auto border-collapse w-full table-with-black-border">
+    <thead class="bg-slate-50 dark:bg-slate-700">
+      <tr>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Title</th>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Author</th>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Year</th>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Available</th>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Category</th>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Image</th>
+        <th class="border border-black font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @books.any? %> 
+        <% @books.each do |book| %>
+          <%= content_tag :tr, id: dom_id(book), class: dom_class(book) do %>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400"><%= book.title %></td>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400"><%= book.author %></td>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400"><%= book.year %></td>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400"><%= book.available %></td>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400"><%= book.category.name %></td>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400">
+              <% if book.image.attached? %> 
+                <%= image_tag book.image, class: "w-16 h-16 object-cover rounded" %>
+              <% else %>
+                <%= image_tag 'no_image_placeholder.png', class: "w-16 h-16 object-cover rounded" %> 
+              <% end %>
+            </td>
+            <td class="border border-black p-4 text-slate-500 dark:text-slate-400">
+              <%= link_to 'Edit', edit_book_path(book), class: button_class(theme: "primary") %>
+            </td>
+          <% end %>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="7" class="text-center p-4">No books found</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
