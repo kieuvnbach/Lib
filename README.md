@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 ## GROUP <add-group-name>
@@ -31,3 +32,6 @@ Installing required libraries, you can run this command multiple time. If there 
 ### Rails console
 
 `rails c`
+=======
+# LMS
+>>>>>>> 51f2070cb805151a438ff02ceac979e97b2ba132
